@@ -41,15 +41,16 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
-		<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116654859-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	
-	  gtag('config', 'UA-116654859-1');
-	</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116654859-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116654859-1');
+</script>
+
 		
 		<!-- Naver Analytics -->		
 	<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
@@ -87,10 +88,10 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> 회원정보</a>
+                        <li><a href="${root}/admin/member/updateForm.do?id=${sessionScope.id}"><i class="fa fa-user fa-fw"></i>정보수정</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="<%=root %>/logout.do"><i class="fa fa-sign-out fa-fw"></i> 로그아웃</a>
+                        <li><a href="${root}/logout.do"><i class="fa fa-sign-out fa-fw"></i> 로그아웃</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -120,36 +121,7 @@
                         <li>
                             <a href="https://analytics.naver.com/"><i class="fa fa-dashboard fa-fw"></i> 방문 통계 상세 정보 확인(네이버)</a>
                         </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> 기타 메뉴<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">기타</a>
-                                </li>
-                                <li>
-                                    <a href="#">기타 <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">기타</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> 페이지 예시<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="blank.html">빈 화면</a>
-                                </li>
-                                <li>
-                                    <a href="login.html">로그인 화면</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
+                       
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

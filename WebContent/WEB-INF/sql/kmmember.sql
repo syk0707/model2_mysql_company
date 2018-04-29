@@ -4,6 +4,6 @@ CREATE TABLE kmmember(
 	grade		VARCHAR(50)		NOT NULL
 )ENGINE=MyISAM DEFAULT CHARSET="utf8";
 
-INSERT INTO kmmember(id,pw,grade) VALUES ('admin', 'rmaaudrldj', 'A');
+INSERT INTO kmmember(id,pw,grade) VALUES ('admin', '', 'A');
 
 SELECT * FROM kmmember;

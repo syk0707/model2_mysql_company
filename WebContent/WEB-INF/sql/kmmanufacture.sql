@@ -22,25 +22,25 @@ DROP TABLE kmmanufacture;
 
 --삽입
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype) 
-VALUES('금명기어', '치연마', '치연마입니다', '치연마입니다', '1', '0', '0', curdate(), '1234', '0', '127.0.0.1', '1.jpg', '0', '0', '치연마' ); 
+VALUES('금명기어', '치연마', '치연마입니다', '치연마입니다', '1', '0', '0', curdate(), '', '0', '127.0.0.1', '1.jpg', '0', '0', '치연마' ); 
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype)
-VALUES('금명기어', '챔퍼링라운드', '챔퍼링라운드입니다','챔퍼링라운드입니다', '2', '0', '0', curdate(), '1234', '0', '127.0.0.1', '2.jpg', '0', '0', '챔퍼링라운드' ); 
+VALUES('금명기어', '챔퍼링라운드', '챔퍼링라운드입니다','챔퍼링라운드입니다', '2', '0', '0', curdate(), '', '0', '127.0.0.1', '2.jpg', '0', '0', '챔퍼링라운드' ); 
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype)
-VALUES('금명기어', '챔퍼링앵글', '챔퍼링앵글입니다','챔퍼링앵글입니다', '3', '0', '0', curdate(), '1234', '0', '127.0.0.1', '3.jpg', '0', '0', '챔퍼링앵글'); 
+VALUES('금명기어', '챔퍼링앵글', '챔퍼링앵글입니다','챔퍼링앵글입니다', '3', '0', '0', curdate(), '', '0', '127.0.0.1', '3.jpg', '0', '0', '챔퍼링앵글'); 
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype)
-VALUES('금명기어', '치절스퍼', '치절스퍼입니다','치절스퍼입니다', '4', '0', '0', curdate(), '1234', '0', '127.0.0.1', '4.jpg', '0', '0', '치절스퍼' ); 
+VALUES('금명기어', '치절스퍼', '치절스퍼입니다','치절스퍼입니다', '4', '0', '0', curdate(), '', '0', '127.0.0.1', '4.jpg', '0', '0', '치절스퍼' ); 
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype) 
-VALUES('금명기어', '치절헬리컬', '치절헬리컬입니다','치절헬리컬입니다', '5', '0', '0', curdate(), '1234', '0', '127.0.0.1', '5.jpg', '0', '0', '치절헬리컬' ); 
+VALUES('금명기어', '치절헬리컬', '치절헬리컬입니다','치절헬리컬입니다', '5', '0', '0', curdate(), '', '0', '127.0.0.1', '5.jpg', '0', '0', '치절헬리컬' ); 
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype)
-VALUES('금명기어', '치절체인', '치절체인입니다','치절체인입니다', '6', '0', '0', curdate(), '1234', '0', '127.0.0.1', '6.jpg', '0', '0', '치절체인' ); 
+VALUES('금명기어', '치절체인', '치절체인입니다','치절체인입니다', '6', '0', '0', curdate(), '', '0', '127.0.0.1', '6.jpg', '0', '0', '치절체인' ); 
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype)
-VALUES('금명기어', '치절랙크', '치절랙크입니다','치절랙크입니다', '7', '0', '0', curdate(), '1234', '0', '127.0.0.1', 'default.jpg', '0', '0', '치절랙크' ); 
+VALUES('금명기어', '치절랙크', '치절랙크입니다','치절랙크입니다', '7', '0', '0', curdate(), '', '0', '127.0.0.1', 'default.jpg', '0', '0', '치절랙크' ); 
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype) 
-VALUES('금명기어', '치절인벌류트', '치절인벌류트입니다','치절인벌류트입니다', '8', '0', '0', curdate(), '1234', '0', '127.0.0.1', 'default.jpg', '0', '0', '치절인벌류트' ); 
+VALUES('금명기어', '치절인벌류트', '치절인벌류트입니다','치절인벌류트입니다', '8', '0', '0', curdate(), '', '0', '127.0.0.1', 'default.jpg', '0', '0', '치절인벌류트' ); 
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype)
-VALUES('금명기어', '치절내치', '치절내치입니다','치절내치입니다', '9', '0', '0', curdate(), '1234', '0', '127.0.0.1', 'default.jpg', '0', '0', '치절내치' ); 
+VALUES('금명기어', '치절내치', '치절내치입니다','치절내치입니다', '9', '0', '0', curdate(), '', '0', '127.0.0.1', 'default.jpg', '0', '0', '치절내치' ); 
 INSERT INTO kmmanufacture(name, subject, subtitle, content, ref, indent, ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype)
-VALUES('금명기어', '치절웜', '치절웜입니다','치절웜입니다', '10', '0', '0', curdate(), '1234', '0', '127.0.0.1', 'default.jpg', '0', '0', '치절웜' ); 
+VALUES('금명기어', '치절웜', '치절웜입니다','치절웜입니다', '10', '0', '0', curdate(), '', '0', '127.0.0.1', 'default.jpg', '0', '0', '치절웜' ); 
 
 --전체 읽기
 SELECT * FROM kmmanufacture WHERE producttype='챔퍼링라운드';

@@ -40,7 +40,7 @@ public class IndexAction implements Action {
 		if(total<3) {
 			total=3;
 		}
-		int sno = total-1;
+		int sno = total-2;
 		int eno = total;
 
 		Map map = new HashMap();//검색관련정보,페이징 관련정보
@@ -50,9 +50,13 @@ public class IndexAction implements Action {
 		map.put("eno", eno);
 
 		List<KmbbsDTO> list2 = dao2.list(map);
-
+		
+		KmmanufactureDAO dao3 = new KmmanufactureDAO();
+		List<KmmanufactureDTO> faclist = dao3.facilitieslist();
+		
 		request.setAttribute("list", list);
 		request.setAttribute("list2", list2);
+		request.setAttribute("faclist", faclist);
 
 		
 		return "/view/index.jsp";

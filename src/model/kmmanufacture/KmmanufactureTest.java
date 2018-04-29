@@ -62,13 +62,7 @@ public class KmmanufactureTest {
 		map.put("word", "");
 		map.put("sno", 1);
 		map.put("eno", 5);
-		List list = dao.getList(map);
-		for(int i = 0; i<list.size(); i++) {
-			KmmanufactureDTO dto = (KmmanufactureDTO)list.get(i);
-			p(dto);
-			p("--------------");
-		}
-		
+
 	}
 
 

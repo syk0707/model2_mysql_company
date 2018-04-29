@@ -36,7 +36,6 @@ public List<KmmanufactureDTO> producttypeList(Map map){
 		sql.append("          ansnum, regdate, passwd, count, ip, filename, filesize, refnum, producttype ");
 		sql.append("   FROM   kmmanufacture ");
 		sql.append("   WHERE  producttype LIKE '"+producttype+"'");
-		
 		if(word.length()>0 && col.equals("subject_content")) {
 			sql.append("  	  WHERE subject LIKE "+"'%"+word+"%'  ");
 			sql.append("  	  OR content LIKE "+"'%"+word+"%'  ");
@@ -45,7 +44,6 @@ public List<KmmanufactureDTO> producttypeList(Map map){
 		}
 		sql.append("	      ORDER BY num DESC, ansnum ASC   ");
 		sql.append("    	  LIMIT ?,6 ");
-		
 		try {
 			pstmt = con.prepareStatement(sql.toString());
 			pstmt.setInt(1, sno);
@@ -294,6 +292,43 @@ public List<KmmanufactureDTO> producttypeList(Map map){
 		return list;
 	}
 	
+	public List<KmmanufactureDTO> facilitieslist(){
+		List<KmmanufactureDTO> list = new ArrayList<KmmanufactureDTO>();
+		Connection con = DBOpen.open();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		StringBuffer sql = new StringBuffer();
+		
+		sql.append(	"	SELECT * FROM kmmanufacture	");
+		sql.append(	"	WHERE producttype='생산설비' ");
+		
+		try {
+			pstmt = con.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				KmmanufactureDTO dto = new KmmanufactureDTO();
+				
+				dto.setNum(rs.getInt("num"));
+				dto.setSubject(rs.getString("subject"));
+				dto.setSubtitle(rs.getString("subtitle"));
+				dto.setSubject(rs.getString("subject"));
+				dto.setRegdate(rs.getString("regdate"));
+				dto.setFilename(rs.getString("filename"));
+				
+				list.add(dto);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBClose.close(con, pstmt, rs);
+		}
+		
+		return list;
+	}
+	
 	public boolean create(KmmanufactureDTO dto){
 		boolean flag = false;
 		Connection con = DBOpen.open();
@@ -336,7 +371,7 @@ public List<KmmanufactureDTO> producttypeList(Map map){
 		ResultSet rs = null;
 		
 		StringBuffer sql = new StringBuffer();
-		sql.append("    SELECT num, name, subject, subtitle, content, count, ");
+		sql.append("    SELECT num, name, subject, subtitle, content, count, producttype, ");
 		sql.append("    filename, filesize, ip, regdate FROM kmmanufacture WHERE num = ? ");
 		
 		try {
@@ -356,6 +391,7 @@ public List<KmmanufactureDTO> producttypeList(Map map){
 				dto.setFilesize(rs.getInt("filesize"));
 				dto.setIp(rs.getString("ip"));
 				dto.setRegdate(rs.getString("regdate"));
+				dto.setProducttype(rs.getString("producttype"));
 				
 			}
 		} catch (SQLException e) {
@@ -378,10 +414,10 @@ public List<KmmanufactureDTO> producttypeList(Map map){
 		
 		int i = 0;
 		sql.append(" UPDATE kmmanufacture SET name=?,  ");
-		sql.append(" subject=?, subtitle=?, content=?   ");
+		sql.append(" subject=?, subtitle=?, content=?, producttype=?   ");
 		if(dto.getFilesize()>0) {
 		sql.append(" ,filename=?,filesize=?  ");}
-		sql.append(" WHERE num = ?  ");
+		sql.append(" 	WHERE num = ?  ");
 		
 		try {
 			pstmt = con.prepareStatement(sql.toString());
@@ -389,6 +425,7 @@ public List<KmmanufactureDTO> producttypeList(Map map){
 			pstmt.setString(++i, dto.getSubject());
 			pstmt.setString(++i, dto.getSubtitle());
 			pstmt.setString(++i, dto.getContent());
+			pstmt.setString(++i, dto.getProducttype());
 			if(dto.getFilesize()>0) {
 				pstmt.setString(++i,  dto.getFilename());
 				pstmt.setInt(++i, dto.getFilesize());

@@ -73,4 +73,103 @@ public class KmmemberDAO {
 	}
 	return flag;
 	}
+	
+	public KmmemberDTO read(String id) {
+		KmmemberDTO dto = null;
+		Connection con = DBOpen.open();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		StringBuffer sql = new StringBuffer();
+		sql.append("    SELECT * FROM kmmember    ");
+		sql.append("    WHERE id = ?    ");
+		try {
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, id);
+			
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto = new KmmemberDTO();
+				dto.setId(rs.getString("id"));
+				dto.setPw(rs.getString("pw"));
+				}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBClose.close(con, pstmt, rs);
+		}
+		
+		return dto;
+	}
+	
+	public boolean checkPasswd(String id, String chkpasswd) {
+
+		boolean flag = false;
+		
+		Connection con = DBOpen.open();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String passwd = null;
+		
+		StringBuffer sql = new StringBuffer();
+		sql.append(" SELECT pw ");
+		sql.append(" FROM	kmmember ");
+		sql.append(" WHERE id=? ");
+		
+		try {
+			pstmt = con.prepareStatement(sql.toString());
+			pstmt.setString(1, id);
+
+			rs=pstmt.executeQuery();
+			if(rs.next()) {
+				passwd = rs.getString(1);
+			}
+			if (passwd.equals(chkpasswd))flag = true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			flag = false;
+		} catch (NullPointerException e){
+			// TODO Auto-generated catch block
+			flag = false;
+		}
+		finally {
+			DBClose.close(con, pstmt, rs);
+		}
+
+		return flag;
+	}
+	
+	public boolean updatePasswd(String id, String npasswd) {
+		boolean flag = false;
+		Connection con = DBOpen.open();
+		PreparedStatement pstmt = null;
+		
+		StringBuffer sql = new StringBuffer();
+		sql.append(" UPDATE kmmember ");
+		sql.append(" SET	pw = ?");
+		sql.append(" WHERE	id = ? ");
+
+		try {
+			pstmt = con.prepareStatement(sql.toString());
+			int i=1;
+			pstmt.setString(i++, npasswd);
+			pstmt.setString(i++, id);
+
+			int cnt = pstmt.executeUpdate();
+
+			if (cnt > 0)
+				flag = true;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			DBClose.close(con, pstmt);
+		}
+		
+		return flag;
+	}
 }

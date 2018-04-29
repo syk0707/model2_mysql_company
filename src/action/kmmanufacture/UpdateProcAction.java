@@ -17,8 +17,8 @@ public class UpdateProcAction implements Action {
 		request.setCharacterEncoding("UTF-8"); 
 		KmmanufactureDTO dto = new KmmanufactureDTO();
 
-		String tempDir = request.getRealPath("/view/temp");
-		String upDir = request.getRealPath("/view/storage");
+		String upDir= request.getSession().getServletContext().getRealPath("/view/storage");
+		String tempDir=request.getSession().getServletContext().getRealPath("/view/storage");
 		UploadSave upload = new UploadSave(request, -1, -1, tempDir);
 
 		// hidden 데이터 받기
@@ -30,7 +30,9 @@ public class UpdateProcAction implements Action {
 
 		String name = UploadSave.encode(upload.getParameter("name"));
 		String subject = UploadSave.encode(upload.getParameter("subject"));
+		String subtitle = UploadSave.encode(upload.getParameter("subtitle"));
 		String content = UploadSave.encode(upload.getParameter("content"));
+		String producttype = UploadSave.encode(upload.getParameter("producttype"));
 		String passwd = upload.getParameter("passwd");
 
 		FileItem fileItem = upload.getFileItem("filename");
@@ -39,13 +41,16 @@ public class UpdateProcAction implements Action {
 		if (size > 0) {
 			filename = UploadSave.saveFile(fileItem, upDir);
 		}
-
+		
 		dto.setNum(num);
 		dto.setName(name);
 		dto.setSubject(subject);
+		dto.setSubtitle(subtitle);
 		dto.setContent(content);
+		dto.setPasswd(passwd);
 		dto.setFilesize(size);
 		dto.setFilename(filename);
+		dto.setProducttype(producttype);
 
 		// form에서 보내는 데이터 받기
 

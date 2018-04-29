@@ -1,46 +1,56 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.*, model.kmmanufacture.*, model.kmbbs.*, utility.*"%>
 <%@ include file="/ssi/ssi.jsp" %>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script src="${root}/js/jquery.ae.image.resize.js"></script>
+
+    <script>
+    (function($) { 
+	  $( ".resize" ).aeImageResize({ height: 360, width: 270 });
+    })(jQuery);
+</script>
 <script>
 	function manuread(num) {
-		var url = "./main/manuread.do";
+		var url = "./manuread.do";
+		var producttype = encodeURIComponent("${param.producttype}");
+		
 		url += "?num=" + num; //js변수
 		url += "&col=${param.col}";
 		url += "&word=${param.word}";
 		url += "&nowPage=${param.nowPage}";
-		url += "&producttype=${param.producttype}"; //js변수
+		url += "&producttype="+producttype; //js변수
 		location.href = url;
 	}
 </script>
+</head>
   <!-- Page Content -->
     <div class="container">
-
-      <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">가공목록
-        <small>${producttype}</small>
-      </h1>
-
+	<br><br>
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="${root}/index.do">Home</a>
         </li>
-        <li class="breadcrumb-item active">가공목록</li>
+        <li class="breadcrumb-item active">목록</li>
         <li class="breadcrumb-item active">${producttype}</li>
       </ol>
 
       <!-- Portfolio Section -->
-      <h3>제품소개</h3>
+      <h4>목록</h4>
 
-      <div class="row">
+      <div class="row" style="background-color: #c1c1c1;">
         <c:forEach var="dto" items="${list}">
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="javascript:manuread('${dto.num}')"><img class="card-img-top" src="${root}/view/storage/${dto.filename}" alt=""></a>
+        <div class="col-lg-4 col-sm-6 portfolio-item" >
+          <div class="card h-100" style="background-color: #c1c1c1">
+            <div class="card-header">
+            <a href="javascript:manuread('${dto.num}')">
+            <img class="img-responsive resize" src="${root}/view/storage/${dto.filename}"></a>
+            </div>
             <div class="card-body">
-              <h4 class="card-title">
+              <h5>
                 <a href="javascript:manuread('${dto.num}')">${dto.subject}</a>
-              </h4>
-              <p class="card-text">${dto.subtitle}</p>
+              </h5>
+              <h6>${dto.subtitle}</h6>
             </div>
           </div>
         </div>

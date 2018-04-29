@@ -9,25 +9,6 @@ import java.util.Map;
 
 public class Utility {
 	
-	public static String getCodeValue(String code) {
-		String value = null;
-		Map<String,String> codes = new HashMap<String,String>();
-		
-		codes.put("A01", "회사원");
-		codes.put("A02", "전산관련직");
-		codes.put("A03", "연구전문직");
-		codes.put("A04", "대학생");
-		codes.put("A05", "일반자영업");
-		codes.put("A06", "공무원");
-		codes.put("A07", "의료인");
-		codes.put("A08", "법조인");
-		codes.put("A09", "종교/언론/예술인");
-		codes.put("A10", "기타");
-		
-		value=codes.get(code);
-		
-		return value;
-	}
 	
 	public static List<String> getDay(){
 		List<String> list = new ArrayList<String>();

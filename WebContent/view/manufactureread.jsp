@@ -1,58 +1,69 @@
-<%@page contentType="text/html; charset=UTF-8" %>
-<%@ page import="java.util.*, model.kmmanufacture.*, model.kmbbs.*, utility.*"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.util.*, model.kmmanufacture.*, utility.*"%>
 <%@ include file="/ssi/ssi.jsp" %>
-
-<%request.setCharacterEncoding("UTF-8");
-	String root = request.getContextPath();
-%>
 
 <html>
 <head>
-
 <script>
-	function list(num) {
+	function list(producttype) {
 		var url = "./main/manufacturelist.do";
-		url += "?num=" + num; //js변수
+		var producttype = encodeURIComponent(producttype);
+		url += "?producttype="+producttype; //js변수
 		url += "&col=${param.col}";
 		url += "&word=${param.word}";
-		url += "&nowPage=1";
+		url += "&nowPage=${param.nowPage}";
 		location.href = url;
 	}
 </script>
 </head>
 
   <body>
-
+	
     <!-- Page Content -->
     <div class="container">
-
+	<br><br>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="./index.do">홈</a>
         </li>
-        <li class="breadcrumb-item active">상세페이지</li>
+        <li class="breadcrumb-item active">기어 가공</li>
+        <li class="breadcrumb-item active">${dto.producttype}</li>
       </ol>
-
+		<br>
       <!-- Page Heading/Breadcrumbs -->
       <h4 class="mt-4 mb-3">
-        <small>제목 : ${dto.subject}</small>
+        제목 : ${dto.subject}
+        <br>
+        등록일 : ${dto.regdate}
+        <br>
       </h4>
-
+		
       <!-- Portfolio Item Row -->
       <div class="row">
-
+		<br><br>
         <div class="col-md-8">
-          <img class="img-fluid" src="${root}/images/${dto.filename}" alt="">
+          <img class="img-fluid" src="${root}/view/storage/${dto.filename}" alt="" 
+          style='height: 100%; width: 100%; object-fit: contain'>
         </div>
 
         <div class="col-md-4">
-        	${dto.subtitle }
         </div>
-        <br><br>
+		
 		<div class="col-md-12">
-			${dto.content}
+		<h5 class="mt-4 mb-3">
+        	${dto.subtitle}
+			</h5>
+			<br>
 		</div>
+		
+		<div class="col-md-12">
+				<br><br>
+		      <h6 class="mt-4 mb-3">
+				${dto.content}
+			  </h6>
+		</div>
+		<br><br>
       </div>
       <div>
       </div>

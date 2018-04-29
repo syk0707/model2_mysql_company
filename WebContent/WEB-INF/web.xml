@@ -44,28 +44,28 @@
 	</servlet-mapping>
 	<error-page>
 		<error-code>401</error-code>
-		<location>/blank.jsp</location>
+		<location>/error.do</location>
 	</error-page>
 	<error-page>
 		<error-code>403</error-code>
-		<location>/blank.jsp</location>
+		<location>/error.do</location>
 	</error-page>
 	<error-page>
-	    <error-code>404</error-code>
-	    <location>/blank.jsp</location>
+		<error-code>404</error-code>
+		<location>/error.do</location>
 	</error-page>
 	<error-page>
 		<error-code>500</error-code>
-		<location>/blank.jsp</location>
+		<location>/error.do</location>
 	</error-page>
-	
-	        <filter>
-  	<filter-name>adminCheck</filter-name>
-  	<filter-class>utility.AdminLoginCheckFilter</filter-class>
-  </filter>
-  <filter-mapping>
-  	<filter-name>adminCheck</filter-name>
-  	<url-pattern>/admin/*</url-pattern>
-  </filter-mapping>
-	
+
+	<filter>
+		<filter-name>adminCheck</filter-name>
+		<filter-class>utility.AdminLoginCheckFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>adminCheck</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+	</filter-mapping>
+
 </web-app>

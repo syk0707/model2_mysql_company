@@ -1,8 +1,14 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ include file="/ssi/ssi.jsp"%>
-<!-- Page Content -->
-<div id="page-wrapper">
-	<div class="container-fluid">
+  <!-- Page Content -->
+    <div class="container">
+	<br><br>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="${root}/index.do">Home</a>
+        </li>
+        <li class="breadcrumb-item active">로그인</li>
+      </ol>
 		<div class="row">
 			<div class="col-lg-12">
 			<br><br>
@@ -22,7 +28,10 @@
                                 	</div>
                                 	<!-- Change this to a button or input when using this as a form -->
                                 	<input type = "submit" value = "로그인" class="form-control" >
+                                	<br><br>
 							</form>
+							
+							
 						</div>
 					</div>
 				</div>
@@ -32,8 +41,6 @@
 		<!-- /.row -->
 	</div>
 	<!-- /.container-fluid -->
-</div>
-<!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->

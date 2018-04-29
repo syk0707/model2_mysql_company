@@ -13,14 +13,6 @@ function fileDown(filename){
 	url+= "&dir=/admin/view/storage"
 	location.href = url;
 }
-function reply(num){
-	var url = "./replyForm.do";
-	url += "?num="+num;
-	url += "&col=${param.col}";
-	url += "&word=${param.word}";
-	url += "&nowPage=${param.nowPage}";
-	location.href=url;
-}
 
 function bdel(){
 	var url = "./deleteForm.do";
@@ -85,6 +77,10 @@ function blist(){
 								<TD>${dto.regdate}</TD>
 							</TR>
 							<TR>
+								<TH>가공분류</TH>
+								<TD>${dto.producttype}</TD>
+							</TR>
+							<TR>
 								<TH>아이피</TH>
 								<TD>${dto.ip}</TD>
 							</TR>
@@ -106,8 +102,6 @@ function blist(){
 							</TR>
 						</TABLE>
 					
-					
-							<button type='button' onclick="reply('${dto.num}')">답변</button>
 							<button type='button' onclick="bdel()">삭제</button>
 							<input type='button' value='수정'
 								onclick="bupdate('${dto.num}')"> <input

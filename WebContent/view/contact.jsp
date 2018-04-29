@@ -30,21 +30,30 @@ function submitContents(elClickedObj) {
 </head> 
 <!-- *********************************************** -->
 <body>
-        <div id="page-wrapper">
+    <!-- Page Content -->
+    <div class="container">
+		<br><br>
+      <!-- Page Heading/Breadcrumbs -->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="${root}/index.do">홈</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#">고객지원</a>
+        </li>
+        <li class="breadcrumb-item active">연락처 남기기</li>
+      </ol>
             <div class="row">
-            	<div class="col-lg-1">
-            	</div>
-                <div class="col-lg-11">
+            	
+                <div class="col-lg-12">
+                <div class="container">
                 <br>
-                    <h1 class="page-header">연락처 입력</h1>
-                </div>
+                    <h2 class="page-header">연락처 입력</h2>
                 <!-- /.col-lg-12 -->
-            </div>
             <!-- /.row -->
             <div class="row">
-            	<div class="col-lg-1">
-            	</div>
-                <div class="col-lg-11">
+						<br>
+                <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             연락처를 입력해주세요.
@@ -55,29 +64,31 @@ function submitContents(elClickedObj) {
 										  action='./createProc.do'
 										  onsubmit="return submitContents(this)"
 										  >
-                        <div class="panel-body">
-                            <div class="row">
+			                        <div class="panel-body">
+			                        <div class="row">
                                 	<div class="col-lg-8">
                                         <div class="form-group">
                                             <label>회사명</label>
-                                            <input type="text" name="name" class="form-control" placeholder="회사명을 입력해주세요(필수)" required required data-validation-required-message="회사명을 입력해주세요">
+                                            <input type="text" name="name" class="form-control" placeholder="회사명을 입력해주세요(필수)" required data-validation-required-message="회사명을 입력해주세요">
                                         </div>
                                         <div class="form-group">
                                             <label>이메일</label>
                                             <input type="email" name="email" class="form-control" placeholder="이메일을 입력해주세요(필수)" required>
                                         </div>
                                         <div class="form-group">
-                                            <label>내용 (선택사항. 한글기준 500자를 초과하면 초과한 문자 이후로는 저장이 안됩니다.)</label>
+                                            <label>내용 (선택사항. 한글기준 500자 초과 이후로는 저장이 안됩니다.)</label>
                                             <textarea name="content" id="content" class="form-control"></textarea>
                                             
                                         </div>
                                         <input type="submit" class="btn btn-default" value="전송"/>
                                         <input type="reset" class="btn btn-default" value="재작성"/>
-                                </div>
-                                
-                                <div class="col-lg-4">
-                                </div>
-                            </div>
+                                        <br>
+	                                </div>
+	                                
+	                                <div class="col-lg-4">
+	                                </div>
+                            		</div>
+                            <br>
                             <!-- /.row (nested) -->
                         </div>
                                     </form>
@@ -93,7 +104,13 @@ function submitContents(elClickedObj) {
 
     </div>
     <!-- /#wrapper -->
+    </div>
+            </div>
+        <!-- /#page-wrapper -->
 
+    </div>
+    <!-- /#wrapper -->
+</div>
 <script type="text/javascript">
 $(document).ready(function() {
     $('#content').on('keyup', function() {
