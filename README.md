@@ -1,4 +1,2 @@
 # syk0707
-test pro git books
-
-checkout merge conflict with same file when another change it differently.
+Model2 JSP 사용, MySQL DB로 개발한 회사 홈페이지입니다
