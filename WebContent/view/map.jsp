@@ -19,7 +19,7 @@
         <!-- Sidebar Column -->
         <div class="col-lg-3 mb-4">
           <div class="list-group">
-            <a href="${root }/main/ceo.do" class="list-group-item">CEO인사말</a>
+            <a href="${root }/main/ceo.do" class="list-group-item">인사말</a>
             <a href="${root }/main/map.do" class="list-group-item">오시는길</a>
           </div>
         </div>

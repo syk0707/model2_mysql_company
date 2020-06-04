@@ -4,6 +4,7 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
+<title>금명정밀기어 연락</title>
 <script>
 function submitContents(elClickedObj) {
     // 에디터의 내용이 textarea에 적용된다.

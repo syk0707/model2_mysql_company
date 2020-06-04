@@ -2,6 +2,7 @@
 <%@ page import="java.util.*, model.kmmanufacture.*, model.kmbbs.*, utility.*"%>
 <%@ include file="/ssi/ssi.jsp" %>
 <head>
+<title>${producttype}</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="${root}/js/jquery.ae.image.resize.js"></script>
 
@@ -47,10 +48,10 @@
             <img class="img-responsive resize" src="${root}/view/storage/${dto.filename}"></a>
             </div>
             <div class="card-body">
-              <h5>
+              <h6>
                 <a href="javascript:manuread('${dto.num}')">${dto.subject}</a>
-              </h5>
-              <h6>${dto.subtitle}</h6>
+              </h6>
+              <p style="font-size:11px">${dto.subtitle}</p>
             </div>
           </div>
         </div>

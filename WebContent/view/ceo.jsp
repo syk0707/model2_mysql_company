@@ -15,7 +15,7 @@
         <li class="breadcrumb-item">
           <a href="#">회사소개</a>
         </li>
-        <li class="breadcrumb-item active">CEO 인사말</li>
+        <li class="breadcrumb-item active">인사말</li>
       </ol>
 
       <!-- Content Row -->
@@ -23,15 +23,12 @@
         <!-- Sidebar Column -->
         <div class="col-lg-3 mb-4">
           <div class="list-group">
-            <a href="${root }/main/ceo.do" class="list-group-item">CEO인사말</a>
+            <a href="${root }/main/ceo.do" class="list-group-item">인사말</a>
             <a href="${root }/main/map.do" class="list-group-item">오시는길</a>
           </div>
         </div>
         <!-- Content Column -->
-          <div class="col-lg-3">
-          <img src="${root}/images/company.png">
-          </div>
-          <div class="col-lg-5">
+          <div class="col-lg-8">
           <h2>인사말</h2>
           <p>안녕하십니까. 
             <br>금명정밀기어는 자동차기어, 공작기어를 비롯한 각종 변속기어를 전문으로 가공 생산하고 있습니다. 
