@@ -1,0 +1,72 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+	@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+*{
+	font-family: 'Nanum Gothic', 'Malgun Gothic';
+}
+
+body {
+  padding-top: 54px;
+  font-family: 'Nanum Gothic', 'Malgun Gothic';
+  background-color: #c1c1c1;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+.carousel-item {
+  height: 65vh;
+  min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+.align-right {
+  text-align: center;
+  float: center;
+}
+.align-center { text-align: center; }
+
+#main-tablefontsize{
+	font size : 7px;
+}
+ a:link { 
+ color: black; 
+ text-decoration: none;
+ }
+ a:visited { 
+ color: black; 
+ text-decoration: none;
+ }
+ a:hover {
+ color: black; 
+ text-decoration: underline;
+ }
+ 
+ .img-responsive {
+ width:200px; 
+ height:150px; 
+ object-fit: fill; 
+ display: block; 
+ margin-left: auto; 
+ margin-right: auto;
+ }
+
